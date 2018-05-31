@@ -1,0 +1,122 @@
+<header id="ht-navbar">
+  <nav class="ht-navbar navbar navbar-expand-lg container">
+    <a class="navbar-brand" href="/"><img id="ht-logo" src="img/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item hvr-underline-reveal">
+          <a class="nav-link " href="./design"><i class="fas fa-paint-brush"></i>Tự thiết kế</a>
+        </li>
+        <li class="nav-item hvr-underline-reveal">
+          <a class="nav-link" href="./shopping.html"><i class="fas fa-shopping-cart"></i>Mua sắm</a>
+        </li>
+        <li class="nav-item ht-shopping-basket hvr-underline-reveal">
+            <a class="nav-link" href="./cart.html">
+                <i class="fas fa-shopping-basket"></i>Giỏ hàng
+                <span class="badge badge-light">1</span>
+            </a>
+          </li>
+        <li class="nav-item hvr-underline-reveal"  style="margin-left: 10px;">
+          <a class="nav-link header-login" href="#" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập</a>
+        </li>
+        <li class="nav-item ht-signup hvr-grow">
+          <a class="nav-link ht-register header-register" href="#" data-toggle="modal" data-target="#exampleModalCenter">Đăng ký</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="z-index: 99999;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item"> 
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Đăng nhập</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Đăng ký</a>
+      </li>
+    </ul>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="abc@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Mật khẩu</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu có ít nhất 6 ký tự">
+        </div>
+        <div style="padding: 20px 0;">
+          <label class="form-check-label" for="exampleCheck1"><a class="forget-password" href="#">Quên mật khẩu?</a></label>
+        </div>
+        <div class="form-modal">
+          <button type="submit" class="btn btn-primary ht-login">Đăng nhập</button>
+              </div>
+      </form>
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmaĩl">Email</label>
+            <input type="email" class="form-control" id="inputEmaĩl" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPasswõrd">Mật khẩu</label>
+            <input type="password" class="form-control" id="inputPasswõrd" placeholder="Mật khẩu có ít nhất 6 ký tự">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Họ tên</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Nhập họ tên">
+        </div>
+        <div class="form-group">
+          <label for="inputAddrèss">Địa chỉ</label>
+          <input type="text" class="form-control" id="inputAddrèss" placeholder="Nhập địa chỉ">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="inputCity">Số điện thoại</label>
+            <input type="text" class="form-control" id="inputCity" placeholder="Nhập số điện thoại">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputBirth">Năm sinh</label>
+            <select id="inputBirth" class="form-control">
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInliné" name="customRadioInliné" class="custom-control-input" checked>
+            <label class="custom-control-label" for="customRadioInliné">Nam</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInlinè" name="customRadioInliné" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInlinè">Nữ</label>
+          </div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </div>
+      </form>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->

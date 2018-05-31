@@ -1,0 +1,28 @@
+{
+  "name": "finalweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenhaitrieu10/FinalWeb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyenhaitrieu10/FinalWeb/issues"
+  },
+  "homepage": "https://github.com/nguyenhaitrieu10/FinalWeb#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-handlebars-paginate": "^1.0.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.10"
+  }
+}
