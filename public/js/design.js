@@ -3,8 +3,8 @@
 var designer = new CanvasDesigner();
 
 // you can place widget.html anywhere
-designer.widgetHTML = 'widget.html';
-designer.widgetJsURL = 'js/widget.js'
+designer.widgetHTML = '/widget.html';
+designer.widgetJsURL = '/js/widget.js'
 
 
 designer.setSelected('line');
