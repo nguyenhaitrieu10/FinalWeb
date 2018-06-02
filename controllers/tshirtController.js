@@ -15,26 +15,29 @@ tshirtController.getLimit = function(callback, limit){
 	.findAll({limit: limit})
 	.then(function(tshirt){
 		callback(tshirt);
-	});
+	}).catch(error => res.status(404).send(error));
 }
 
 tshirtController.getList = function(callback, query){
 	models.TShirt
 	.findAll({limit: query.limit})
-	.then(function(tshirt){
-		callback(tshirt);
-	});
+	.then(function(tshirts){
+		tshirts.forEach(function(e){
+			e.beforCost = ((e.dataValues.cost << 0) / (1 - e.dataValues.sellof / 100)) << 0;
+		});
+		callback(tshirts);
+	}).catch(error => res.status(404).send(error));
 }
 
-// tshirtController.getById = function(id, callback){
-// 	models.article
-// 	.findOne({
-// 		where: {id: id}
-// 		// include: [models.comment]
-// 	})
-// 	.then(function(article){
-// 		callback(article);
-// 	});
-// }
+tshirtController.getByID = function(callback, id){
+	models.TShirt
+	.findOne({
+		where: {id: id}
+	})
+	.then(function(tshirt){
+		tshirt.beforCost = ((tshirt.dataValues.cost << 0) / (1 - tshirt.dataValues.sellof / 100)) << 0;
+		callback(tshirt);
+	}).catch(error => res.status(404).send(error));
+}
 
 module.exports = tshirtController;

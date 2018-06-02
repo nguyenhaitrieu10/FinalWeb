@@ -1,45 +1,37 @@
 <section class="container" style="padding-top: 62px;">
 	<div class="row" style="margin-top: 30px; background-color: #fff;">
 		<div class="ht-img-lg col-lg-6 col-sm-12 hvr-grow">
-			<img src="img/detail-sample.jpg" alt="" style="width:75%; height:50%;">
+			<img src="{{dataValues.image}}" alt="" style="width:75%; height:50%;">
 		</div>
 		<div class="ht-info-detail col-lg-6 col-sm-12">
-			<h3>Áo thun nam trắng</h3>
-			<h6 style="color:gray; margin-left: 10px">Mã sản phẩm: <span style="color:blue">AO001</span></h6>
-			<h6 style="color:gray; margin-left: 10px">Nhà sản xuất: <span style="color:blue"> TML company</span></h6>
-			<h6 style="color:gray; margin-left: 10px">Tình trạng: <span style="color:blue"> còn hàng</span></h6>
+			<h3>{{dataValues.name}}</h3>
+			<h6 style="color:gray; margin-left: 10px">Mã sản phẩm: <span style="color:blue">SP00{{dataValues.id}}</span></h6>
+			<h6 style="color:gray; margin-left: 10px">Nhà sản xuất: <span style="color:blue">{{dataValues.origin}}</span></h6>
+			{{#if dataValues.number}}
+			<h6 style="color:gray; margin-left: 10px">Tình trạng: <span style="color:blue">còn hàng</span>
+			</h6>
+			{{else}}
+			<h6 style="color:gray; margin-left: 10px">Tình trạng: <span style="color:blue">hết hàng</span>
+			</h6>
+			{{/if}}
 			<div>
 				<h3 class="ht-info-cost">
-					<span class="ht-real-cost" style="color:#ff6600">50.000đ</span> <strike style="color:lightgray; font-size:0.67em">100.000đ</strike><span class="ht-saleoff" style="font-size:0.67em">-50%</span>
+					<span class="ht-real-cost" style="color:#ff6600">{{dataValues.cost}}đ</span> <strike style="color:lightgray; font-size:0.67em">{{beforCost}}đ</strike><span class="ht-saleoff" style="font-size:0.67em">-{{dataValues.sellof}}%</span>
 					<br/>
 				</h3>
 			</div>
 			<h5 style="margin-top: 20px;  font-size:1em">Chọn kích cỡ: </h5>
 			<div style=" margin-left: 10px">
-				<button style="background-color:transparent;color:#189eff;border: 2px solid #189eff;border-radius: 5px;">Size M</button>
-				<button style="background-color:transparent;color:#189eff;border: 2px solid #189eff;border-radius: 5px;">Size L</button>
-				<button style="background-color:transparent;color:#189eff;border: 2px solid #189eff;border-radius: 5px;">Size XL</button>
-				<button style="background-color:transparent;color:#189eff;border: 2px solid #189eff;border-radius: 5px;">Size XXL</button>
+				{{#each dataValues.size}}
+				<button style="background-color:transparent;color:#189eff;border: 2px solid #189eff;border-radius: 5px;" value="{{this}}">Size {{this}}</button>
+				{{/each}}
 			</div>
-			<!-- <h5 style="margin-top: 10px; font-size:1em">Chọn màu:</h5>
-			<div style=" margin-left: 10px">
-				<button style="background-color:white;color:green;border: 2px solid black;border-radius: 5px;padding: 10px"> </button>
-				<button style="background-color:green;color:green;border: 2px solid green;border-radius: 5px;padding: 10px"> </button>
-				<button style="background-color:red;color:red;border: 2px solid red;border-radius: 5px;padding: 10px"> </button>
-				<button style="background-color:blue;color:blue;border: 2px solid blue;border-radius: 5px;padding: 10px"> </button>
-				<button style="background-color:yellow;color:yellow;border: 2px solid yellow;border-radius: 5px;padding: 10px"> </button>
-			</div> -->
 			<h5><br/>Số lượng: <input type="number" name="quantity" style="width: 60px; height:30px; padding-left: 10px; margin-left: 20px" value="1"></h5>
 			<button class="btn btn-primary ht-add-cart"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
-
-			<h6 style="color:gray; margin-top:30px"><i class="ht-rating fas fa-heart" style="color:red;"></i>55 người quan tâm đến sản phẩm này</h6>
 		</div>
 	</div>
 	<div class="row ht-more-info" style="background-color: #fff; margin-top: 16px;">
 		<h5 style="width: 100%;">Mô tả:</h5>
-
-		<p>Với thiết kế trẻ trung, năng động, áo thun League Legends sẽ tạo cho khách hàng của bạn cảm giác thoải mái nhất khi mặc. </p>
-		<p>Sản phẩm được làm từ chất liệu thun cotton thoáng mát và đàn hồi cực tốt giúp tạo cảm giác thoải mái nhất cho người mặc mà giá thành lại không quá cao. Những thiết kế riêng và logo được các bạn đưa ra sẽ được in miễn phí lên áo với những công nghệ in hàng đầu, đảm bảo hình in sắc nét, bền màu và làm nổi bật mục tiêu marketing của công ty  bạn ngay từ cái nhìn đầu tiên.
-		</p>
+		<p>{{dataValues.description}}</p>
 	</div>
 </section>

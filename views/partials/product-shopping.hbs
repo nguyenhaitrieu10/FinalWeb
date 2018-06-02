@@ -3,13 +3,17 @@
         <img class="card-img-top ht-card-img img-responsive" src="{{dataValues.image}}" alt="Card image cap">
         <div class="overlay">
            <h2>Free Style</h2>
-           <a class="info" href="./product">Xem chi tiết</a>
+           <a class="info" href="/product/SP00{{dataValues.id}}">Xem chi tiết</a>
         </div>
     </div>
 	<a href="./product">
 	  <div class="card-body">
 	    <p class="card-text-shopping">{{dataValues.name}}</p>
-	    <p class="ht-info-cost"><strike>{{dataValues.cost}}đ</strike><span class="ht-saleoff">-30%</span></p>
+		{{#if sellof}}
+	    	<p class="ht-info-cost"><strike>{{beforCost}}đ</strike><span class="ht-saleoff">-{{sellof}}%</span></p>
+	    {{else}}
+	    	<p class="ht-info-cost"><strike></strike><span class="ht-saleoff"></span></p>
+		{{/if}}
 	    <p><span class="ht-cost">{{dataValues.cost}} đ</span></p>
 	  </div>
 	</a>

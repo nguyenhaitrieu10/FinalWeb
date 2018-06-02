@@ -22,17 +22,22 @@ router.get('/shopping', function(req, res, next) {
     query.skip = req.query.skip;
   
   query.limit = 12;
-  
+
   tshirtController.getList(function(tshirts){
-    res.render('shopping',{lists: tshirts});
+    res.render('shopping',{lists: tshirts, count: tshirts.length});
   },query);
 });
 
-// current working
 
-router.get('/product', function(req, res, next) {
-  res.render('product', { title: 'Express' });
+router.get('/product/SP00:id', function(req, res, next) {
+    let id = req.params.id;
+    console.log(id);
+    tshirtController.getByID(function(product){
+    res.render('product',product);
+  },id);
 });
+
+// current working
 
 router.get('/cart', function(req, res, next) {
   res.render('cart', { title: 'Express' });
