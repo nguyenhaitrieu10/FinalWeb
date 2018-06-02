@@ -7,6 +7,7 @@ var paginateHelper = require('express-handlebars-paginate');
 var bodyParser = require('body-parser');
 
 var app = express();
+var router = express.Router();
 
 var hbs = exphbs.create({
 	defaultLayout: 'layout',
@@ -31,10 +32,12 @@ app.use(cookieParser());
 var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
-// catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
+var adminRouter = require('./routes/admin');
+app.use('/root', adminRouter);
+
+app.get('/*', function(req, res){
+	res.render('error',{layout: false});
+});
 
 app.listen(app.get('port'), function(){
 	console.log('Server is listening at port ' + app.get('port'));

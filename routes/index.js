@@ -1,14 +1,34 @@
 var express = require('express');
 var router = express.Router();
+var tshirtController = require('../controllers/tshirtController');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  tshirtController.getLimit(function(tshirts){
+    res.render('index',{samples: tshirts});
+  },8);
 });
 
 router.get('/shopping', function(req, res, next) {
-  res.render('shopping', { title: 'Express' });
+  let query = {};
+  if (req.query.type != undefined)
+    query.type = req.query.type;
+  if (req.query.color != undefined)
+    query.color = req.query.color;
+  if (req.query.key != undefined)
+    query.key = req.query.key;
+  if (req.query.sort != undefined)
+    query.sort = req.query.sort;
+  if (req.query.skip != undefined)
+    query.skip = req.query.skip;
+  
+  query.limit = 12;
+  
+  tshirtController.getList(function(tshirts){
+    res.render('shopping',{lists: tshirts});
+  },query);
 });
+
+// current working
 
 router.get('/product', function(req, res, next) {
   res.render('product', { title: 'Express' });

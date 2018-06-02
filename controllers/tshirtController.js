@@ -1,16 +1,32 @@
-// var controller  = {};
+var tshirtController  = {};
 
-// var models = require('../models');
+var models = require('../models');
 
-// controller.getAll = function(callback){
-// 	models.article
-// 	.findAll()
-// 	.then(function(articles){
-// 		callback(articles);
-// 	});
-// }
+tshirtController.getAll = function(callback){
+	models.TShirt
+	.findAll()
+	.then(function(tshirt){
+		callback(tshirt);
+	}).catch(error => res.status(404).send(error));
+}
 
-// controller.getById = function(id, callback){
+tshirtController.getLimit = function(callback, limit){
+	models.TShirt
+	.findAll({limit: limit})
+	.then(function(tshirt){
+		callback(tshirt);
+	});
+}
+
+tshirtController.getList = function(callback, query){
+	models.TShirt
+	.findAll({limit: query.limit})
+	.then(function(tshirt){
+		callback(tshirt);
+	});
+}
+
+// tshirtController.getById = function(id, callback){
 // 	models.article
 // 	.findOne({
 // 		where: {id: id}
@@ -21,4 +37,4 @@
 // 	});
 // }
 
-// module.exports = controller;
+module.exports = tshirtController;
